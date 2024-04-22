@@ -11,13 +11,13 @@ export type MessageType = {
 export type initialStateMessagesType ={[key:string]: MessageType[]}
 
 export let initialMessagesState: initialStateMessagesType = {
-    [1] : [
+    ["1"] : [
         {id: v1(), message: "Hello"},
         {id: v1(), message: "By"}
     ],
-    [2] : [
-        /*{id: v1(), message: "Privet"},
-        {id: v1(), message: "Kak dela?"}*/
+    ["2"] : [
+        {id: v1(), message: "Privet"},
+        {id: v1(), message: "Kak dela?"}
     ]
 }
 export const messagesReducers = (state = initialMessagesState, action: ActionMessagesType):initialStateMessagesType => {
@@ -25,6 +25,11 @@ export const messagesReducers = (state = initialMessagesState, action: ActionMes
         case "ADD-MESSAGE": {
             return {...state,
             [action.payload.idDialogs] : [...state[action.payload.idDialogs], {id: v1(), message: action.payload.message}]
+            }
+        }
+        case "ADD-MESSAGE-DIALOGS":{
+            return {...state,
+            [action.payload.id]: []
             }
         }
         default: return state

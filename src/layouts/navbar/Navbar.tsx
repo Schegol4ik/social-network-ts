@@ -2,7 +2,6 @@ import React from 'react';
 import styled from "styled-components";
 import {PATH} from "../../assets/PATH";
 import {NavLink} from "react-router-dom";
-import {Container} from "../../styles/Container";
 import {FlexWrapper} from "../../styles/FlexWrapper";
 
 type NavbarLinksType = {
@@ -19,6 +18,10 @@ export const Navbar = () => {
         {
             path: PATH.dialogs,
             title: "Dialogs"
+        },
+        {
+            path: PATH.friends,
+            title: "Friends"
         },
         {
             path: PATH.musics,

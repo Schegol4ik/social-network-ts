@@ -6,5 +6,6 @@ export const PATH = {
     news: "/news",
     settings: "/settings",
     errorPage: "/error404",
-    messages: "/messages/:id"
+    messages: "/messages/:id",
+    friends: "/friends"
 }
